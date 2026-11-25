@@ -1,0 +1,4 @@
+import { useState } from 'react';
+import { Plus,Minus } from 'lucide-react';
+import { faq } from '../data/content';
+export function FAQ(){const [open,setOpen]=useState<number|null>(0);return <section className="section faq light-section" id="faq"><div className="faq-heading reveal"><span className="section-label">ИНФОРМАЦИЯ О ЗАНЯТИЯХ</span><h2>Вопросы<br/>и ответы</h2><p>Не нашли нужную информацию?<br/>Свяжитесь со школой.</p><a className="text-link" href="tel:+37120027271">+371 20027271</a></div><div className="faq-list">{faq.map(([q,a],i)=><div className="faq-item" key={q}><h3><button onClick={()=>setOpen(open===i?null:i)} aria-expanded={open===i} aria-controls={`answer-${i}`}>{q}{open===i?<Minus aria-hidden="true"/>:<Plus aria-hidden="true"/>}</button></h3><div className={`faq-answer ${open===i?'expanded':''}`} id={`answer-${i}`} inert={open!==i}><div><p>{a}</p></div></div></div>)}</div></section>}
