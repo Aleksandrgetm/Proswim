@@ -18,6 +18,7 @@ import { useReducedMotion } from './hooks/useReducedMotion';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { usePageMotion } from './hooks/usePageMotion';
 import './styles/sections.css';
+import './styles/mobile.css';
 export default function App(){
  const [request,setRequest]=useState<BookingRequest|null>(null);const reduced=useReducedMotion();useSmoothScroll(reduced);usePageMotion(reduced);
  const book=(seed:BookingSeed={})=>{setRequest({seed,nonce:Date.now()});requestAnimationFrame(()=>{document.getElementById('booking')?.scrollIntoView({behavior:reduced?'instant':'smooth'});document.querySelector<HTMLElement>('#booking h3')?.focus({preventScroll:true});});};

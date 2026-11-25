@@ -1,0 +1,66 @@
+/* Mobile refinements: keep the desktop composition intact. */
+@media (max-width: 760px) {
+  .section > *, .booking-panel > *, .booking-fields > *, .price-row > * { min-width: 0; }
+  .pricing, .booking, .faq, .coach-stage, .about-editorial { grid-template-columns: minmax(0, 1fr); }
+  .price-row { grid-template-columns: 24px minmax(0, 1fr) auto; }
+  .pricing-tabs { gap: 18px; }
+  .pricing-tabs button { min-width: 0; text-align: left; overflow-wrap: anywhere; }
+  .section h2 { overflow-wrap: break-word; }
+  .session-location { flex-wrap: wrap; gap: 6px 12px; }
+  .schedule-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .schedule-filters select, .booking select,
+  .booking input:not([type=radio]):not([type=checkbox]) { font-size: 16px; }
+  .schedule-filters select { text-overflow: ellipsis; }
+  .booking-intro h2 { font-size: clamp(40px, 10vw, 64px); }
+  .booking-panel { min-height: 0; margin: 0; }
+  .booking-progress { margin-bottom: 28px; }
+  .booking-progress small { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .booking-step > .section-label { font-size: 12px; }
+  .booking-fields { grid-template-columns: minmax(0, 1fr); }
+  .slot-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .slot-choice small { font-size: 12px; line-height: 1.5; }
+  .booking-actions { gap: 16px; }
+  .booking-actions .button { min-width: 0; }
+  .booking-success > .button { padding-inline: 12px; }
+  .gallery-caption { gap: 10px; }
+  .gallery-caption svg, .direction h3 button svg { flex-shrink: 0; }
+  .lightbox { padding-top: max(60px, env(safe-area-inset-top)); padding-bottom: env(safe-area-inset-bottom); }
+  .lightbox-bar { gap: 12px; }
+  .lightbox-bar .icon-button { flex-shrink: 0; }
+  .mobile-menu { overflow-y: auto; padding: max(20px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left)); }
+  .mobile-menu nav { margin: clamp(24px, 6dvh, 60px) 0 28px; gap: 8px; }
+  .mobile-menu nav button { font-size: clamp(26px, 7vw, 32px); }
+  .mobile-menu > .button { width: 100%; }
+  .mobile-menu p { margin-top: 24px; }
+}
+@media (max-width: 420px) {
+  .section { padding-inline: 20px; }
+  .section h2 { font-size: clamp(34px, 10vw, 42px); }
+  .coach-profile h3 { font-size: clamp(40px, 12vw, 50px); }
+  .schedule-filters { grid-template-columns: minmax(0, 1fr); }
+  .schedule-filters label:first-of-type { grid-column: auto; }
+  .schedule-result-header { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .day-picker button { padding-inline: 0; }
+  .day-picker button > span { font-size: 17px; }
+  .slot-options { grid-template-columns: minmax(0, 1fr); }
+  .booking-step h3 { font-size: 27px; }
+  .booking-actions .button { font-size: 12px; padding-inline: 12px; }
+  .contact-info .contact-phone { font-size: 24px; }
+  .footer-base > span:last-child { letter-spacing: .06em; }
+}
+@media (max-width: 760px) and (max-height: 500px) {
+  .mobile-menu nav { margin: 16px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .mobile-menu nav button { font-size: 24px; text-align: left; }
+  .mobile-menu p { margin-top: 16px; }
+}
+@media (max-width: 760px) {
+  .price-heading h2 br, .faq-heading h2 br { display: initial; }
+}
+/* Portrait tablets need a full-width form, not two compressed columns. */
+@media (min-width: 761px) and (max-width: 1000px) {
+  .booking { grid-template-columns: minmax(0, 1fr); }
+  .booking-intro h2 { font-size: 64px; }
+  .booking-demo { margin-top: 28px; max-width: 520px; }
+  .booking-panel { width: 100%; }
+  .booking-progress small { font-size: 11px; }
+}
